@@ -23,7 +23,7 @@
           },
           colors: {
             gold: {
-              DEFAULT: '#B8860B',
+              DEFAULT: '#B8860B', // 你原本的金色
               light: '#d4af37',
               dark: '#8a6508',
               50: '#fdfaef',
@@ -37,6 +37,7 @@
   </script>
   
   <style>
+    /* 一些無法用 Tailwind 簡單處理的微調 */
     body { background-color: #faf9f7; }
     .glass-card {
       background: rgba(255, 255, 255, 0.05);
@@ -50,27 +51,33 @@
 
   <!-- HERO 區塊 -->
   <section class="bg-dark text-white pt-20 pb-24 px-6 text-center relative overflow-hidden">
+    <!-- 背景裝飾光暈 -->
     <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-gold opacity-20 blur-[120px] rounded-full pointer-events-none"></div>
 
+    <!-- 將原本的 max-w-3xl 放寬為 max-w-4xl -->
     <div class="relative z-10 max-w-4xl mx-auto">
       <span class="block text-gold text-xs md:text-sm font-bold tracking-[0.2em] mb-4 uppercase">Google 商家實戰課程</span>
       
       <h1 class="text-3xl md:text-5xl font-black leading-tight mb-6">
         你的店每天都在<br class="md:hidden">
+        <!-- 加上 inline-block 確保「你知道嗎？」不會被單字切斷 -->
         <span class="text-gold text-glow">漏掉客人</span>，<span class="inline-block">你知道嗎？</span>
       </h1>
       
+      <!-- 將 max-w-xl 改為 max-w-2xl，讓第一句話有足夠空間不會被擠斷 -->
       <p class="text-gray-400 text-base md:text-lg max-w-2xl mx-auto mb-10">
         76% 消費者上門前先 Google 你。但你的商家頁面，還停在幾年前沒動過。<br>這堂課教你用最低成本啟動免費吸客機。
       </p>
 
-      <!-- 價格與行動呼籲區塊 -->
+      <!-- 價格與行動呼籲區塊 (高轉換率強化版) -->
       <div class="relative max-w-md mx-auto mb-10 mt-4 group">
+        <!-- 閃爍發光背景特效 -->
         <div class="absolute -inset-1 bg-gradient-to-r from-yellow-600 via-gold to-yellow-500 rounded-2xl blur-lg opacity-40 group-hover:opacity-70 transition duration-1000 animate-pulse"></div>
         
         <div class="relative glass-card bg-[#151515] rounded-2xl p-1 overflow-hidden">
           <div class="bg-gradient-to-b from-[#222] to-[#111] rounded-xl p-6 md:p-8 flex flex-col items-center border border-white/5">
             
+            <!-- 稀缺性標籤 (FOMO) -->
             <div class="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-red-500 via-yellow-500 to-red-500"></div>
             <div class="bg-red-500/10 border border-red-500/20 text-red-400 text-xs font-bold px-3 py-1 rounded-full mb-6 flex items-center gap-1.5 shadow-[0_0_10px_rgba(239,68,68,0.2)]">
               <span class="relative flex h-2 w-2">
@@ -95,7 +102,8 @@
               <span class="text-gray-400 text-lg">/ 人</span>
             </div>
 
-            <a href="#signup" class="w-full relative group/btn">
+            <!-- 超級按鈕 -->
+            <a href="https://mycal.tw/e/cfb07a83" target="_blank" class="w-full relative group/btn">
               <div class="absolute -inset-0.5 bg-gradient-to-r from-yellow-400 to-yellow-600 rounded-xl blur opacity-50 group-hover/btn:opacity-100 transition duration-200"></div>
               <button class="relative w-full bg-gradient-to-b from-yellow-400 to-gold hover:from-yellow-300 hover:to-gold-light text-black font-black text-lg md:text-xl py-4 px-4 md:px-6 rounded-xl transition-all shadow-xl flex items-center justify-center gap-1.5 sm:gap-2 transform group-hover/btn:-translate-y-1">
                 <svg class="w-5 h-5 sm:w-6 sm:h-6 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
@@ -124,26 +132,32 @@
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Card 1 -->
         <div class="fade-up opacity-0 translate-y-8 transition-all duration-700 ease-out bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md hover:-translate-y-1">
           <h3 class="font-bold text-lg mb-3">「花了錢打廣告，沒什麼效果」</h3>
           <p class="text-gray-500 text-sm leading-relaxed">每個月幾千塊廣告費打水漂，客人來一次就消失，沒有回頭率。</p>
         </div>
+        <!-- Card 2 -->
         <div class="fade-up opacity-0 translate-y-8 transition-all duration-700 ease-out delay-[100ms] bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md hover:-translate-y-1">
           <h3 class="font-bold text-lg mb-3">「客人說找不到我的店」</h3>
           <p class="text-gray-500 text-sm leading-relaxed">Google 地圖資訊全是錯的，電話號碼還是舊的，客人打不進來。</p>
         </div>
+        <!-- Card 3 -->
         <div class="fade-up opacity-0 translate-y-8 transition-all duration-700 ease-out delay-[200ms] bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md hover:-translate-y-1">
           <h3 class="font-bold text-lg mb-3">「明明服務很好，評論卻很少」</h3>
           <p class="text-gray-500 text-sm leading-relaxed">隔壁新開的店評論比你多，排名比你高，你的老客人不知道怎麼留評。</p>
         </div>
+        <!-- Card 4 -->
         <div class="fade-up opacity-0 translate-y-8 transition-all duration-700 ease-out bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md hover:-translate-y-1">
           <h3 class="font-bold text-lg mb-3">「架網站太貴太複雜」</h3>
           <p class="text-gray-500 text-sm leading-relaxed">找人架站要好幾萬，更新還要再花錢，最後那個網站根本沒人看。</p>
         </div>
+        <!-- Card 5 -->
         <div class="fade-up opacity-0 translate-y-8 transition-all duration-700 ease-out delay-[100ms] bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md hover:-translate-y-1">
           <h3 class="font-bold text-lg mb-3">「不知道網路行銷從哪開始」</h3>
           <p class="text-gray-500 text-sm leading-relaxed">IG、FB、Line、Google 全都要顧，光是想到就頭大，不知道哪個值得投資。</p>
         </div>
+        <!-- Card 6 -->
         <div class="fade-up opacity-0 translate-y-8 transition-all duration-700 ease-out delay-[200ms] bg-red-50 p-6 rounded-2xl shadow-sm border border-red-100 hover:shadow-md hover:-translate-y-1">
           <h3 class="font-bold text-lg mb-3 text-red-700">「請人代操 Google 費用超貴」</h3>
           <p class="text-gray-600 text-sm leading-relaxed">市面代操 $3,000–$8,000 / 月，還不保證效果，小店根本負擔不起。</p>
@@ -160,7 +174,7 @@
         <h2 class="text-3xl md:text-4xl font-bold text-gray-900">花錢 vs 不花錢，<br class="sm:hidden">效果差在哪？</h2>
       </div>
 
-      <!-- 電腦版表格 -->
+      <!-- 電腦版表格 (768px 以上顯示，維持原本乾淨的表格) -->
       <div class="hidden md:block overflow-x-auto rounded-xl border border-gray-200 shadow-sm">
         <table class="w-full text-left border-collapse min-w-[600px]">
           <thead>
@@ -200,8 +214,10 @@
         </table>
       </div>
 
-      <!-- 手機版對比卡片 -->
+      <!-- 手機版對比卡片 (768px 以下顯示，解決橫向滑動痛點) -->
       <div class="md:hidden flex flex-col gap-4">
+        
+        <!-- 比較項目 1 -->
         <div class="bg-white rounded-xl border border-gray-200 overflow-hidden shadow-sm">
           <div class="bg-gray-50 border-b border-gray-100 p-2 text-center text-sm font-bold text-gray-700">每月費用</div>
           <div class="flex divide-x divide-gray-100">
@@ -215,6 +231,8 @@
             </div>
           </div>
         </div>
+
+        <!-- 比較項目 2 -->
         <div class="bg-white rounded-xl border border-gray-200 overflow-hidden shadow-sm">
           <div class="bg-gray-50 border-b border-gray-100 p-2 text-center text-sm font-bold text-gray-700">觸及對象</div>
           <div class="flex divide-x divide-gray-100">
@@ -228,6 +246,8 @@
             </div>
           </div>
         </div>
+
+        <!-- 比較項目 3 -->
         <div class="bg-white rounded-xl border border-gray-200 overflow-hidden shadow-sm">
           <div class="bg-gray-50 border-b border-gray-100 p-2 text-center text-sm font-bold text-gray-700">效果持續</div>
           <div class="flex divide-x divide-gray-100">
@@ -241,6 +261,8 @@
             </div>
           </div>
         </div>
+
+        <!-- 比較項目 4 -->
         <div class="bg-white rounded-xl border border-gray-200 overflow-hidden shadow-sm">
           <div class="bg-gray-50 border-b border-gray-100 p-2 text-center text-sm font-bold text-gray-700">掌控程度</div>
           <div class="flex divide-x divide-gray-100">
@@ -254,6 +276,8 @@
             </div>
           </div>
         </div>
+
+        <!-- 比較項目 5 -->
         <div class="bg-white rounded-xl border border-gray-200 overflow-hidden shadow-sm">
           <div class="bg-gray-50 border-b border-gray-100 p-2 text-center text-sm font-bold text-gray-700">技術門檻</div>
           <div class="flex divide-x divide-gray-100">
@@ -267,6 +291,7 @@
             </div>
           </div>
         </div>
+
       </div>
 
     </div>
@@ -281,7 +306,7 @@
       <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
         <div class="fade-up opacity-0 translate-y-8 transition-all duration-700 ease-out bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
           <div class="text-4xl md:text-5xl font-black text-gold mb-3"><span class="counter" data-target="76">0</span>%</div>
-          <div class="text-sm text-gray-500 leading-relaxed">消費者上門前<br>120 分鐘內先 Google</div>
+          <div class="text-sm text-gray-500 leading-relaxed">消費者上門前<br>會先在 Google Map 上查詢</div>
         </div>
         <div class="fade-up opacity-0 translate-y-8 transition-all duration-700 ease-out delay-[100ms] bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
           <div class="text-4xl md:text-5xl font-black text-gold mb-3"><span class="counter" data-target="88">0</span>%</div>
@@ -296,6 +321,18 @@
           <div class="text-sm text-gray-500 leading-relaxed">Google 商家<br>每月維護費用</div>
         </div>
       </div>
+
+      <!-- 新增：數據看完後的衝動攔截按鈕 -->
+      <div class="mt-12 md:mt-16 fade-up opacity-0 translate-y-8 transition-all duration-700 ease-out delay-[400ms]">
+        <a href="https://mycal.tw/e/cfb07a83" target="_blank" class="inline-block w-full sm:w-auto relative group/btn">
+          <div class="absolute -inset-0.5 bg-gradient-to-r from-yellow-400 to-yellow-600 rounded-xl blur opacity-30 group-hover/btn:opacity-80 transition duration-300"></div>
+          <button class="relative w-full sm:w-auto bg-gradient-to-b from-yellow-400 to-gold hover:from-yellow-300 hover:to-gold-light text-black font-black text-base md:text-lg py-3.5 md:py-4 px-6 md:px-10 rounded-xl transition-all shadow-md flex items-center justify-center gap-2 transform group-hover/btn:-translate-y-1">
+            <span class="text-center leading-snug">立即報名，<br class="sm:hidden">別再把客人送給對手</span>
+            <svg class="w-5 h-5 shrink-0 transition-transform group-hover/btn:-translate-y-0.5 group-hover/btn:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+          </button>
+        </a>
+      </div>
+
     </div>
   </section>
 
@@ -308,7 +345,9 @@
         <p class="text-gray-500">每個環節都為「實體店老闆」設計，沒有廢話，<br class="sm:hidden">只有立即能用的操作與實體產出。</p>
       </div>
 
+      <!-- 學習地圖 (Roadmap) 設計 -->
       <div class="relative max-w-3xl mx-auto">
+        <!-- 垂直時間軸連線 (電腦版顯示) -->
         <div class="absolute left-[27px] top-4 bottom-12 w-0.5 bg-gray-100 hidden sm:block"></div>
 
         <!-- 單元 01 -->
@@ -328,6 +367,7 @@
             </div>
             <h3 class="font-bold text-xl text-gray-900 mb-2">為什麼 Google 商家<br class="sm:hidden">是最便宜的 SEO？</h3>
             <p class="text-gray-500 text-sm mb-6 leading-relaxed">破解「SEO 很難」的迷思，說明為什麼這是實體店最值得投資的免費工具。</p>
+            <!-- 實體產出區塊 -->
             <div class="bg-gray-50 rounded-xl p-4 border border-gray-100 flex items-start gap-3">
               <svg class="w-5 h-5 text-gold shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg>
               <div>
@@ -419,13 +459,15 @@
           </div>
         </div>
 
-        <!-- 單元 05 -->
+        <!-- 單元 05 (高光強調) -->
         <div class="relative flex flex-col sm:flex-row gap-4 sm:gap-8 group fade-up opacity-0 translate-y-8 transition-all duration-700 ease-out delay-[400ms]">
           <div class="hidden sm:flex flex-col items-center shrink-0 z-10">
             <div class="w-14 h-14 rounded-full bg-gold border-4 border-gold-50 shadow-md flex items-center justify-center text-white font-black text-xl">5</div>
           </div>
           <div class="flex-1 bg-gradient-to-br from-white to-gold-50 p-6 md:p-8 rounded-2xl shadow-md border-2 border-gold/20 group-hover:shadow-xl group-hover:-translate-y-1 transition-all duration-300 relative overflow-hidden">
+            <!-- 裝飾光暈 -->
             <div class="absolute -right-10 -top-10 w-40 h-40 bg-gold/10 rounded-full blur-2xl pointer-events-none"></div>
+            
             <div class="flex flex-wrap items-center justify-between gap-3 mb-4 relative z-10">
               <div class="flex items-center gap-2">
                 <span class="text-xl">🚀</span>
@@ -494,6 +536,94 @@
     </div>
   </section>
 
+  <!-- 課程與講師資訊區塊 (新增) -->
+  <section class="py-20 px-6 bg-white">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-12">
+        <span class="text-gold text-xs font-bold tracking-[0.2em] uppercase block mb-2">實戰陣容</span>
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900">上課資訊與講師介紹</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-5 gap-6 md:gap-8">
+        
+        <!-- 上課資訊卡片 (佔 2 欄) -->
+        <div class="md:col-span-2 fade-up opacity-0 translate-y-8 transition-all duration-700 ease-out bg-gray-50 p-8 rounded-2xl border border-gray-100 flex flex-col justify-center shadow-sm">
+          <h3 class="text-xl font-bold text-gray-900 mb-8 flex items-center gap-2">
+            <svg class="w-6 h-6 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+            實體課程資訊
+          </h3>
+          
+          <div class="space-y-6">
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 rounded-full bg-white shadow-sm border border-gray-100 flex items-center justify-center shrink-0 text-gold">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+              </div>
+              <div>
+                <div class="text-xs font-bold text-gray-400 mb-1">上課日期</div>
+                <div class="font-bold text-gray-900 text-lg">2026 / 04 / 07 <span class="text-sm font-normal text-gray-500 ml-1"></span></div>
+              </div>
+            </div>
+            
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 rounded-full bg-white shadow-sm border border-gray-100 flex items-center justify-center shrink-0 text-gold">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+              </div>
+              <div>
+                <div class="text-xs font-bold text-gray-400 mb-1">上課時間</div>
+                <div class="font-bold text-gray-900 text-lg">13:00 - 15:00</div>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 rounded-full bg-white shadow-sm border border-gray-100 flex items-center justify-center shrink-0 text-gold">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+              </div>
+              <div>
+                <div class="text-xs font-bold text-gray-400 mb-1">上課地點</div>
+                <div class="font-bold text-gray-900 leading-snug">高雄市左營區<br>重忠路 146 號</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 講師介紹卡片 (佔 3 欄) -->
+        <div class="md:col-span-3 fade-up opacity-0 translate-y-8 transition-all duration-700 ease-out delay-[200ms] bg-white p-6 md:p-8 rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100 flex flex-col justify-center">
+          <div class="flex flex-col sm:flex-row gap-6 items-start mb-6">
+            <!-- 講師頭像 -->
+            <img src="https://mycal.tw/storage/avatars/65huw1st8C8KSHWhOQX2dACkXpvZxX7ZKaN2W2yX.png" alt="講師 熊恩 Sean" class="w-20 h-20 md:w-24 md:h-24 rounded-full border-4 border-white shadow-md object-cover shrink-0 bg-gray-50">
+            <div>
+              <div class="inline-block bg-gold-50 text-gold-dark text-xs font-bold px-3 py-1 rounded-full mb-2">主講人</div>
+              <h3 class="text-2xl md:text-3xl font-black text-gray-900 mb-2">熊恩 <span class="text-lg text-gray-400 font-bold ml-1">Sean</span></h3>
+              <p class="text-gray-500 text-sm leading-relaxed text-justify">致力於將「社群行銷策略」與「AI 工具」完美融合的實戰派講師。擁有 8 年社群行銷公司經營背景，擅長透過 AI 大幅提升內容產製效率，幫助品牌與個人放大數位影響力。</p>
+            </div>
+          </div>
+
+          <div class="bg-paper rounded-xl p-5 md:p-6 border border-gray-100">
+            <h4 class="text-sm font-bold text-gray-900 mb-4 flex items-center gap-2">
+              <svg class="w-4 h-4 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+              核心經歷與專長
+            </h4>
+            <ul class="space-y-3">
+              <li class="flex items-start gap-2.5">
+                <svg class="w-5 h-5 text-green-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg>
+                <span class="text-sm text-gray-700"><strong>8 年</strong>社群行銷實戰與品牌操盤經驗</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <svg class="w-5 h-5 text-green-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg>
+                <span class="text-sm text-gray-700"><strong>豐富授課經歷</strong>（涵蓋各大企業、大專院校及政府單位）</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <svg class="w-5 h-5 text-green-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg>
+                <span class="text-sm text-gray-700"><strong>專長領域：</strong>跨平台社群策略、AI 內容產製、短影音企劃、品牌視覺溝通</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
   <!-- FAQ 區塊 -->
   <section class="py-20 px-6 bg-paper border-t border-gray-200">
     <div class="max-w-3xl mx-auto">
@@ -523,7 +653,7 @@
     </div>
   </section>
 
-  <!-- 報名表單區塊 -->
+  <!-- 報名跳轉區塊 -->
   <section id="signup" class="py-24 px-6 bg-dark text-white relative">
     <div class="max-w-xl mx-auto relative z-10">
       <div class="text-center mb-10">
@@ -532,70 +662,31 @@
         <p class="text-gray-400 text-sm">每一天沒優化，就是每一天把客人送給對手。<br>今天學，今天用，今天就開始被更多人找到。</p>
       </div>
 
+      <!-- 報名引導卡片 -->
       <div class="bg-white p-6 md:p-8 rounded-2xl shadow-xl">
+        <!-- 價格總結 -->
         <div class="bg-gold-50 border border-gold/30 rounded-xl p-4 mb-6 text-center">
           <div class="text-gold-dark font-bold text-lg">首期限定優惠價 <span class="text-2xl font-black ml-2">$999</span></div>
           <div class="text-xs text-gold-dark/70 mt-1">原價 $5,980 · 額滿即恢復 $2,880</div>
         </div>
 
-        <form id="courseForm" class="flex flex-col gap-4">
-          <div>
-            <input type="text" id="f-name" placeholder="您的姓名 *" class="w-full bg-gray-50 border border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-gold focus:border-gold block p-3.5 transition-colors outline-none">
-          </div>
-          <div>
-            <input type="tel" id="f-tel" placeholder="手機號碼 *" class="w-full bg-gray-50 border border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-gold focus:border-gold block p-3.5 transition-colors outline-none">
-          </div>
-          <div>
-            <input type="text" id="f-shop" placeholder="店家名稱 *" class="w-full bg-gray-50 border border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-gold focus:border-gold block p-3.5 transition-colors outline-none">
-          </div>
-          <div>
-            <select id="f-industry" class="w-full bg-gray-50 border border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-gold focus:border-gold block p-3.5 transition-colors outline-none appearance-none cursor-pointer">
-              <option value="" disabled selected>請選擇行業類別 *</option>
-              <option>餐飲 / 咖啡廳</option>
-              <option>美容 / 美髮 / SPA</option>
-              <option>診所 / 醫療</option>
-              <option>汽車 / 機車保養</option>
-              <option>服飾 / 零售</option>
-              <option>教育 / 補習班</option>
-              <option>健身 / 運動</option>
-              <option>民宿 / 旅遊</option>
-              <option>其他實體店家</option>
-            </select>
-          </div>
-          <div>
-            <select id="f-region" class="w-full bg-gray-50 border border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-gold focus:border-gold block p-3.5 transition-colors outline-none appearance-none cursor-pointer">
-              <option value="" disabled selected>請選擇所在地區 *</option>
-              <option>台北市</option><option>新北市</option><option>基隆市</option><option>桃園市</option>
-              <option>新竹市</option><option>新竹縣</option><option>苗栗縣</option><option>台中市</option>
-              <option>彰化縣</option><option>南投縣</option><option>雲林縣</option><option>嘉義市</option>
-              <option>嘉義縣</option><option>台南市</option><option>高雄市</option><option>屏東縣</option>
-              <option>宜蘭縣</option><option>花蓮縣</option><option>台東縣</option><option>澎湖縣</option>
-              <option>金門縣</option><option>連江縣</option>
-            </select>
-          </div>
-          
-          <div id="error-msg" class="hidden text-red-500 text-sm font-medium text-center bg-red-50 py-2 rounded">
-            請完整填寫所有帶星號 (*) 的欄位
-          </div>
-
-          <button type="button" id="submitBtn" class="w-full bg-gold hover:bg-gold-dark text-white font-bold py-4 rounded-xl text-lg transition-all duration-300 transform hover:-translate-y-0.5 shadow-lg mt-2">
-            確認報名並送出 $999 &rarr;
-          </button>
-          
-          <p class="text-xs text-gray-400 text-center mt-2 leading-relaxed">
-            送出後將自動提交至系統<br>我們將以簡訊通知課程時間與付款方式
-          </p>
-        </form>
-
-        <div id="thanks" class="hidden text-center py-8">
-          <div class="w-16 h-16 bg-green-100 text-green-500 rounded-full flex items-center justify-center mx-auto mb-4">
-            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
-          </div>
-          <h3 class="text-2xl font-bold text-gray-900 mb-2">報名成功！</h3>
-          <p class="text-gray-600 text-sm leading-relaxed">
-            資料已送出。<br>我們將在 24 小時內以簡訊通知<span class="inline-block">課程詳情與付款方式。</span><br>感謝你的信任，<span class="inline-block">期待在課程上見到你！</span>
-          </p>
+        <div class="text-center py-4">
+          <p class="text-gray-600 font-bold mb-2">請點擊下方按鈕前往專屬報名頁面</p>
+          <p class="text-gray-500 text-sm mb-6">完成報名與付款後，將為您保留早鳥名額</p>
         </div>
+
+        <a href="https://mycal.tw/e/cfb07a83" target="_blank" class="w-full relative group/btn block">
+          <div class="absolute -inset-0.5 bg-gradient-to-r from-yellow-400 to-yellow-600 rounded-xl blur opacity-50 group-hover/btn:opacity-100 transition duration-200"></div>
+          <button class="relative w-full bg-gradient-to-b from-yellow-400 to-gold hover:from-yellow-300 hover:to-gold-light text-black font-black text-lg py-4 rounded-xl transition-all shadow-xl flex items-center justify-center gap-2 transform group-hover/btn:-translate-y-0.5 mt-2">
+            <span>立即報名</span>
+            <!-- 加入跳出外部連結的小圖示 -->
+            <svg class="w-5 h-5 shrink-0 transition-transform group-hover/btn:-translate-y-0.5 group-hover/btn:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+          </button>
+        </a>
+        
+        <p class="text-xs text-gray-400 text-center mt-4 leading-relaxed">
+          點擊後將開啟新視窗跳轉至報名系統
+        </p>
       </div>
     </div>
   </section>
@@ -605,70 +696,34 @@
     <p class="text-xs text-gray-600 tracking-widest uppercase">GOOGLE 商家實戰班 · 把地圖變成你的自動吸客機</p>
   </footer>
 
+  <!-- 懸浮報名按鈕 (Floating Action Button) -->
+  <a href="https://mycal.tw/e/cfb07a83" target="_blank" class="fixed bottom-6 right-6 md:bottom-10 md:right-10 z-50 group">
+    <!-- 擴散波紋動畫 (吸引視覺) -->
+    <div class="absolute inset-0 bg-yellow-400 rounded-full animate-ping opacity-60 group-hover:opacity-80 transition-opacity duration-300"></div>
+    <!-- 按鈕本體 -->
+    <div class="relative flex flex-col items-center justify-center w-[72px] h-[72px] md:w-[84px] md:h-[84px] bg-gradient-to-b from-yellow-400 to-gold hover:from-yellow-300 hover:to-gold-light text-black font-black rounded-full shadow-[0_8px_25px_rgba(184,134,11,0.6)] transform transition-transform duration-300 group-hover:-translate-y-1 border-2 border-yellow-200/50">
+      <span class="text-sm md:text-base leading-tight text-center drop-shadow-sm">立即<br>報名</span>
+    </div>
+  </a>
+
   <script>
-    var FORM_ACTION = 'https://docs.google.com/forms/d/e/1FAIpQLSfilevVDRB2RIEFRw4K1351hZmg1T8rEpsyLc4lwdbxLQgzfg/formResponse';
-
-    document.getElementById('submitBtn').addEventListener('click', function(){
-      var name     = document.getElementById('f-name').value.trim();
-      var tel      = document.getElementById('f-tel').value.trim();
-      var shop     = document.getElementById('f-shop').value.trim();
-      var industry = document.getElementById('f-industry').value;
-      var region   = document.getElementById('f-region').value;
-      var errorMsg = document.getElementById('error-msg');
-      var submitBtn= document.getElementById('submitBtn');
-
-      errorMsg.classList.add('hidden');
-
-      if(!name || !tel || !shop || !industry || !region){
-        errorMsg.classList.remove('hidden');
-        errorMsg.animate([
-          { transform: 'translateX(-5px)' },
-          { transform: 'translateX(5px)' },
-          { transform: 'translateX(-5px)' },
-          { transform: 'translateX(5px)' },
-          { transform: 'translateX(0)' }
-        ], { duration: 300 });
-        return;
-      }
-
-      submitBtn.innerHTML = '處理中...';
-      submitBtn.disabled = true;
-      submitBtn.classList.add('opacity-70', 'cursor-not-allowed');
-
-      var params = new URLSearchParams({
-        'entry.1000730687': name,
-        'entry.2072199180': tel,
-        'entry.1305672288': shop,
-        'entry.473968484':  industry,
-        'entry.391240298':  region
-      });
-
-      var url = FORM_ACTION + '?' + params.toString();
-
-      var img = new Image();
-      img.src = url;
-
-      setTimeout(function() {
-        document.getElementById('courseForm').style.display = 'none';
-        document.getElementById('thanks').style.display = 'block';
-      }, 800);
-    });
-
-    // 捲動動畫
+    // --- 捲動動畫特效 (Intersection Observer) ---
     document.addEventListener('DOMContentLoaded', () => {
+      // 1. 卡片順序浮現動畫
       const fadeUpElements = document.querySelectorAll('.fade-up');
       const fadeObserver = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
             entry.target.classList.remove('opacity-0', 'translate-y-8');
             entry.target.classList.add('opacity-100', 'translate-y-0');
-            observer.unobserve(entry.target);
+            observer.unobserve(entry.target); // 播完解除監聽
           }
         });
       }, { threshold: 0.15 });
 
       fadeUpElements.forEach(el => fadeObserver.observe(el));
 
+      // 2. 數據跳動動畫
       const dataSection = document.getElementById('data-section');
       const counters = document.querySelectorAll('.counter');
       
@@ -678,10 +733,10 @@
             if (entry.isIntersecting) {
               counters.forEach(counter => {
                 const target = +counter.getAttribute('data-target');
-                if (target === 0) return;
+                if (target === 0) return; // 0 的不跳動
                 
-                const duration = 1500;
-                const frameRate = 30;
+                const duration = 1500; // 動畫歷時 1.5 秒
+                const frameRate = 30; // 30ms 刷新一次
                 const totalFrames = duration / frameRate;
                 const inc = target / totalFrames;
                 let current = 0;
@@ -700,7 +755,7 @@
               observer.unobserve(entry.target);
             }
           });
-        }, { threshold: 0.3 });
+        }, { threshold: 0.3 }); // 當區塊進入視窗 30% 時觸發
 
         dataObserver.observe(dataSection);
       }
